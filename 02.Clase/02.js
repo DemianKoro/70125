@@ -1,10 +1,11 @@
-// OPCIÓN 1
+// // OPCIÓN 1
+
 // function suma(val1, val2){
 //     let suma = val1 + val2;
 //     return suma;
 // }
 
-// OPCIÓN 2 (función flecha) mismo resultado =
+// // OPCIÓN 2 (función flecha) mismo resultado =
 
 const suma = (val1, val2) => val1 + val2;
 
