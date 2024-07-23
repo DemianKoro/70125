@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f06, #ff8e53);
+            color: #fff;
+            margin: 0;
+        }
+        .calculator {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 320px;
+        }
+        .display {
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-align: right;
+            border: 2px solid #ff8e53;
+            border-radius: 5px;
+            padding: 15px;
+            background: #000;
+            color: #0ff;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        button {
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #333;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff8e53;
+        }
+        button.operation {
+            background: #f06;
+        }
+        button.operation:hover {
+            background: #ff8e53;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator">
+    <div id="display" class="display"></div>
+    <div class="buttons">
+        <button onclick="appendNumber(1)">1</button>
+        <button onclick="appendNumber(2)">2</button>
+        <button onclick="appendNumber(3)">3</button>
+        <button class="operation" onclick="setOperation('sumar')">+</button>
+        <button onclick="appendNumber(4)">4</button>
+        <button onclick="appendNumber(5)">5</button>
+        <button onclick="appendNumber(6)">6</button>
+        <button class="operation" onclick="setOperation('restar')">-</button>
+        <button onclick="appendNumber(7)">7</button>
+        <button onclick="appendNumber(8)">8</button>
+        <button onclick="appendNumber(9)">9</button>
+        <button class="operation" onclick="setOperation('multiplicar')">*</button>
+        <button onclick="appendNumber(0)">0</button>
+        <button class="operation" onclick="calculate()">=</button>
+        <button onclick="clearDisplay()">C</button>
+        <button class="operation" onclick="setOperation('dividir')">/</button>
+    </div>
+</div>
+
+<script>
+    let numbers = [];
+    let currentNumber = '';
+    let operation = null;
+
+    const appendNumber = (num) => {
+        currentNumber += num;
+        document.getElementById('display').innerText = currentNumber;
+    }
+
+    const setOperation = (op) => {
+        if (currentNumber !== '') {
+            numbers.push(parseFloat(currentNumber));
+            currentNumber = '';
+        }
+        operation = op;
+        updateDisplay();
+    }
+
+    const updateDisplay = () => {
+        const display = document.getElementById('display');
+        display.innerText = numbers.join(' ') + ' ' + (operation ? operation : '') + ' ' + currentNumber;
+    }
+
+    const clearDisplay = () => {
+        numbers = [];
+        currentNumber = '';
+        operation = null;
+        document.getElementById('display').innerText = '';
+    }
+
+    const sumar = (...nums) => nums.reduce((acc, num) => acc + num, 0);
+    const restar = (...nums) => nums.reduce((acc, num) => acc - num);
+    const multiplicar = (...nums) => nums.reduce((acc, num) => acc * num, 1);
+    const dividir = (...nums) => nums.reduce((acc, num) => acc / num);
+
+    const realizarOperacion = (funcionCallback, ...nums) => {
+        let resultado = funcionCallback(...nums);
+        return resultado;
+    }
+
+    const calculate = () => {
+        if (currentNumber !== '') {
+            numbers.push(parseFloat(currentNumber));
+        }
+        let resultado;
+        switch (operation) {
+            case 'sumar':
+                resultado = realizarOperacion(sumar, ...numbers);
+                break;
+            case 'restar':
+                resultado = realizarOperacion(restar, ...numbers);
+                break;
+            case 'multiplicar':
+                resultado = realizarOperacion(multiplicar, ...numbers);
+                break;
+            case 'dividir':
+                resultado = realizarOperacion(dividir, ...numbers);
+                break;
+            default:
+                resultado = 'Error';
+        }
+        document.getElementById('display').innerText = `Resultado: ${resultado}`;
+        numbers = [resultado];
+        currentNumber = '';
+        operation = null;
+    }
+</script>
+
+</body>
+</html>

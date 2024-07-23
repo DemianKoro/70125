@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Dune",
+    "description": "Epic science fiction novel by Frank Herbert",
+    "price": 30,
+    "thumbnail": "dune.jpg",
+    "code": "scifi001",
+    "stock": 100,
+    "id": 1
+  },
+  {
+    "title": "Foundation",
+    "description": "Science fiction series by Isaac Asimov",
+    "price": 25,
+    "thumbnail": "foundation.jpg",
+    "code": "scifi003",
+    "stock": 50,
+    "id": 3
+  },
+  {
+    "title": "Snow Crash",
+    "description": "Science fiction novel by Neal Stephenson",
+    "price": 18,
+    "thumbnail": "snowcrash.jpg",
+    "code": "scifi004",
+    "stock": 70,
+    "id": 4
+  },
+  {
+    "title": "The Left Hand of Darkness",
+    "description": "Science fiction novel by Ursula K. Le Guin",
+    "price": 22,
+    "thumbnail": "lefthand.jpg",
+    "code": "scifi005",
+    "stock": 60,
+    "id": 5
+  },
+  {
+    "title": "Hyperion",
+    "description": "Science fiction novel by Dan Simmons",
+    "price": 20,
+    "thumbnail": "hyperion.jpg",
+    "code": "scifi006",
+    "stock": 90,
+    "id": 6
+  }
+]
