@@ -1,0 +1,27 @@
+2024-07-28T01:29:12.919Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T01:29:46.617Z [info]: POST /api/products - Nuevo producto añadido con ID 1722130186616
+2024-07-28T01:30:06.317Z [error]: POST /api/products - El código del producto debe ser único
+2024-07-28T01:30:42.482Z [error]: POST /api/products - El código del producto debe ser único
+2024-07-28T01:34:58.415Z [info]: POST /api/products - Nuevo producto añadido con ID 1722130498414
+2024-07-28T01:35:19.297Z [info]: DELETE /api/products/1722130186616 - Producto eliminado
+2024-07-28T02:11:29.946Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T02:12:24.789Z [error]: DELETE /api/products/1722130186616 - Producto no encontrado
+2024-07-28T02:20:59.621Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T02:22:48.659Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:23:06.081Z [error]: POST /api/products - Campos obligatorios faltantes
+2024-07-28T02:25:17.180Z [info]: POST /api/products - Nuevo producto añadido con ID 1722130498415
+2024-07-28T02:38:51.793Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T02:42:53.504Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:42:56.071Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:43:49.256Z [info]: POST /api/products - Nuevo producto añadido con ID 1
+2024-07-28T02:43:52.280Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:44:30.265Z [info]: GET /api/products/1 - Producto solicitado
+2024-07-28T02:44:36.907Z [info]: PUT /api/products/1 - Producto actualizado
+2024-07-28T02:44:38.411Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:45:02.853Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:45:13.347Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:45:52.396Z [info]: POST /api/products - Nuevo producto añadido con ID 2
+2024-07-28T02:45:55.640Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:46:59.356Z [info]: POST /api/products - Nuevo producto añadido con ID 3
+2024-07-28T02:47:02.363Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T02:47:15.270Z [info]: DELETE /api/products/3 - Producto eliminado
