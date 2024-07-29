@@ -1,0 +1,82 @@
+.background-wood {
+  background-image: url('https://www.publicdomainpictures.net/pictures/30000/velka/plain-wood-texture.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente para mejorar la legibilidad */
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #4d2600; /* Color madera oscura */
+}
+
+.cart-item-details p {
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.cart-item-details button {
+  background-color: #4d2600; /* Color madera oscura */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cart-item-details button:hover {
+  background-color: #3b1e00; /* Color madera aún más oscura */
+}

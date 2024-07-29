@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './AddBook.css'; // Asegúrate de tener un archivo CSS para los estilos
 
 const AddBook = () => {
   const [title, setTitle] = useState('');
@@ -8,15 +9,34 @@ const AddBook = () => {
   const [price, setPrice] = useState('');
   const [stock, setStock] = useState('');
   const [category, setCategory] = useState('');
+  const [thumbnail, setThumbnail] = useState(null);
+
+  const handleFileChange = (e) => {
+    setThumbnail(e.target.files[0]);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newBook = { title, description, code, price, stock, category };
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('code', code);
+    formData.append('price', price);
+    formData.append('stock', stock);
+    formData.append('category', category);
+    if (thumbnail) {
+      formData.append('thumbnail', thumbnail);
+    }
+
     try {
-      await axios.post('http://localhost:8080/api/products', newBook);
-      alert('Libro añadido!');
+      const response = await axios.post('http://localhost:8080/api/products', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+      alert('Producto añadido!');
     } catch (error) {
-      console.error('Error al añadir el libro', error);
+      console.error('Error al añadir el producto', error);
     }
   };
 
@@ -53,10 +73,14 @@ const AddBook = () => {
             <option value="Fantasía">Fantasía</option>
           </select>
         </div>
+        <div className="form-group">
+          <label>Imagen</label>
+          <input type="file" className="form-control" onChange={handleFileChange} />
+        </div>
         <button type="submit" className="btn btn-primary">Agregar Libro</button>
       </form>
     </div>
   );
-}
+};
 
 export default AddBook;

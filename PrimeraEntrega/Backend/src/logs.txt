@@ -25,3 +25,123 @@
 2024-07-28T02:46:59.356Z [info]: POST /api/products - Nuevo producto añadido con ID 3
 2024-07-28T02:47:02.363Z [info]: GET /api/products - Todos los productos solicitados
 2024-07-28T02:47:15.270Z [info]: DELETE /api/products/3 - Producto eliminado
+2024-07-28T15:00:05.828Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T15:22:33.865Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T15:22:51.656Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T15:30:43.475Z [info]: POST /api/carts - Nuevo carrito creado con ID 1722180643475
+2024-07-28T15:36:32.624Z [info]: POST /api/carts/1722180643475/product/2 - Producto añadido al carrito
+2024-07-28T15:40:51.887Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T15:41:10.281Z [info]: POST /api/carts - Nuevo carrito creado con ID 1722181270281
+2024-07-28T15:42:09.180Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:42:12.602Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T15:42:20.018Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:42:27.602Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:42:32.122Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:45:56.871Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:47:51.871Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:48:13.874Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T15:48:32.838Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:48:43.964Z [info]: POST /api/carts/1722181270281/product/1 - Producto añadido al carrito
+2024-07-28T15:48:44.028Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T15:48:47.254Z [info]: POST /api/carts/1722181270281/product/2 - Producto añadido al carrito
+2024-07-28T15:48:47.308Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:29:34.239Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T22:29:50.149Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:30:27.867Z [info]: POST /api/carts/1722181270281/product/1 - Producto añadido al carrito
+2024-07-28T22:30:27.931Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:34:16.934Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T22:34:32.039Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:34:47.118Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:34:55.603Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:35:07.739Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:35:12.778Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:35:15.163Z [info]: DELETE /api/carts/1722181270281/product/1 - Producto eliminado del carrito
+2024-07-28T22:35:15.230Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:35:34.046Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:35:35.398Z [info]: DELETE /api/carts/1722181270281/product/2 - Producto eliminado del carrito
+2024-07-28T22:35:35.454Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:35:37.169Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:35:38.418Z [info]: DELETE /api/products/1 - Producto eliminado
+2024-07-28T22:35:39.140Z [info]: DELETE /api/products/2 - Producto eliminado
+2024-07-28T22:37:47.411Z [error]: POST /api/products - Campos obligatorios faltantes
+2024-07-28T22:38:13.063Z [error]: POST /api/products - Campos obligatorios faltantes
+2024-07-28T22:38:31.781Z [info]: POST /api/products - Nuevo producto añadido con ID 1
+2024-07-28T22:38:52.794Z [error]: POST /api/products - El código del producto debe ser único
+2024-07-28T22:39:00.511Z [info]: POST /api/products - Nuevo producto añadido con ID 2
+2024-07-28T22:39:16.887Z [info]: POST /api/products - Nuevo producto añadido con ID 3
+2024-07-28T22:39:30.315Z [info]: POST /api/products - Nuevo producto añadido con ID 4
+2024-07-28T22:39:39.929Z [info]: POST /api/products - Nuevo producto añadido con ID 5
+2024-07-28T22:39:50.227Z [info]: POST /api/products - Nuevo producto añadido con ID 6
+2024-07-28T22:40:00.541Z [info]: POST /api/products - Nuevo producto añadido con ID 7
+2024-07-28T22:40:10.341Z [info]: POST /api/products - Nuevo producto añadido con ID 8
+2024-07-28T22:40:18.329Z [info]: POST /api/products - Nuevo producto añadido con ID 9
+2024-07-28T22:40:29.492Z [info]: POST /api/products - Nuevo producto añadido con ID 10
+2024-07-28T22:41:53.361Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:42:46.713Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:42:50.996Z [info]: POST /api/carts/1722181270281/product/6 - Producto añadido al carrito
+2024-07-28T22:42:51.117Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:42:57.618Z [info]: POST /api/carts/1722181270281/product/5 - Producto añadido al carrito
+2024-07-28T22:42:57.674Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:42:59.184Z [info]: DELETE /api/carts/1722181270281/product/5 - Producto eliminado del carrito
+2024-07-28T22:42:59.235Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:42:59.808Z [info]: DELETE /api/carts/1722181270281/product/6 - Producto eliminado del carrito
+2024-07-28T22:42:59.854Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:43:07.480Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:43:43.797Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:43:48.143Z [info]: POST /api/carts/1722181270281/product/2 - Producto añadido al carrito
+2024-07-28T22:43:48.199Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:44:40.895Z [info]: POST /api/carts/1722181270281/product/4 - Producto añadido al carrito
+2024-07-28T22:44:41.461Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:44:44.824Z [info]: DELETE /api/carts/1722181270281/product/4 - Producto eliminado del carrito
+2024-07-28T22:44:45.017Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:46:03.907Z [info]: POST /api/carts/1722181270281/product/7 - Producto añadido al carrito
+2024-07-28T22:46:04.443Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:46:22.415Z [info]: DELETE /api/carts/1722181270281/product/7 - Producto eliminado del carrito
+2024-07-28T22:46:22.640Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:47:00.059Z [info]: POST /api/carts/1722181270281/product/2 - Producto añadido al carrito
+2024-07-28T22:47:00.294Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:47:05.233Z [info]: POST /api/carts/1722181270281/product/1 - Producto añadido al carrito
+2024-07-28T22:47:05.424Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:47:34.082Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T22:47:37.930Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:47:46.383Z [info]: POST /api/carts/1722181270281/product/3 - Producto añadido al carrito
+2024-07-28T22:47:46.592Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:47:58.094Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:48:05.413Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:48:11.809Z [info]: POST /api/carts/1722181270281/product/5 - Producto añadido al carrito
+2024-07-28T22:48:11.870Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:52:55.221Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T22:56:23.923Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:58:35.841Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T22:58:50.243Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T22:59:08.632Z [info]: GET /api/products - Todos los productos solicitados
+2024-07-28T23:06:50.531Z [info]: 🚀 Servidor escuchando en el puerto 8080
+2024-07-28T23:10:01.175Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-28T23:18:23.000Z [info]: 🚀 Servidor escuchando en el puerto 8080
+2024-07-28T23:30:41.079Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:31:48.365Z [info]: PUT /api/products/3 - Producto actualizado con ID 3
+2024-07-28T23:36:55.815Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:39:40.220Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:43:51.722Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:47:27.968Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:47:51.082Z [info]: PUT /api/products/3 - Producto actualizado con ID 3
+2024-07-28T23:54:14.563Z [info]: Servidor escuchando en el puerto 8080
+2024-07-28T23:57:10.824Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T00:01:53.244Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T00:02:55.236Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T00:03:02.525Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T00:03:05.809Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T00:34:06.111Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T01:05:12.803Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T01:09:57.925Z [info]: PUT /api/products/1 - Producto actualizado con ID 1
+2024-07-29T01:11:47.449Z [info]: PUT /api/products/2 - Producto actualizado con ID 2
+2024-07-29T01:12:45.034Z [info]: PUT /api/products/4 - Producto actualizado con ID 4
+2024-07-29T01:14:25.829Z [info]: PUT /api/products/5 - Producto actualizado con ID 5
+2024-07-29T01:14:59.790Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T01:15:02.308Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T01:15:26.752Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T01:21:32.509Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T01:22:46.343Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T01:22:53.367Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
+2024-07-29T01:27:40.855Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T01:31:55.235Z [info]: Servidor escuchando en el puerto 8080

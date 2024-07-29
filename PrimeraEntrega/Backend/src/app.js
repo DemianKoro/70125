@@ -2,12 +2,14 @@ const express = require('express');
 const logger = require('./logger');
 const productsRouter = require('./routers/productsRouter');
 const cartsRouter = require('./routers/cartsRouter');
-const cors = require('cors'); // Para permitir solicitudes desde el front-end
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
 app.use(express.json());
-app.use(cors()); // Permitir solicitudes de cualquier origen
+app.use(cors());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Servir archivos estáticos desde el directorio 'uploads'
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
 

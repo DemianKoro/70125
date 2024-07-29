@@ -1,1 +1,132 @@
-[{"id":"1","title":"Horóscopo","description":"TBD","code":"newborn","price":"310","status":true,"stock":"0","category":"Terror","thumbnails":[]},{"id":"2","title":"Dracula","description":"El padre de los vampiros","code":"vampire","price":"320","status":true,"stock":"1","category":"Terror","thumbnails":[]}]
+[
+  {
+    "id": "1",
+    "title": "Dune",
+    "description": "En el lejano futuro, en el desértico planeta Arrakis, Paul Atreides se convierte en el líder de una rebelión.",
+    "code": "CF002",
+    "price": 35,
+    "status": true,
+    "stock": 20,
+    "category": "Ciencia Ficción",
+    "thumbnails": [
+      "/uploads/1722215397918-Dune.jfif"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Neuromancer",
+    "description": "Case, un hacker sin futuro, es contratado para llevar a cabo la última misión.",
+    "code": "CF003",
+    "price": 25,
+    "status": true,
+    "stock": 15,
+    "category": "Ciencia Ficción",
+    "thumbnails": [
+      "/uploads/1722215507440-neuromancer.jpg"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "1984",
+    "description": "En una sociedad distópica, el Gran Hermano lo ve todo.",
+    "code": "CF001",
+    "price": 30,
+    "status": true,
+    "stock": 25,
+    "category": "Ciencia Ficción",
+    "thumbnails": [
+      "/uploads/1722210471076-1984.jpg"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "El Hobbit",
+    "description": "Bilbo Bolsón emprende una aventura inesperada para recuperar el tesoro de los enanos.",
+    "code": "F001",
+    "price": 20,
+    "status": true,
+    "stock": 30,
+    "category": "Fantasía",
+    "thumbnails": [
+      "/uploads/1722215565032-hobbit.jpg"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Harry Potter y la piedra filosofal",
+    "description": "Harry descubre que es un mago y comienza su aventura en Hogwarts.",
+    "code": "F002",
+    "price": 25,
+    "status": true,
+    "stock": 40,
+    "category": "Fantasía",
+    "thumbnails": [
+      "/uploads/1722215665826-lapiedrafilosofal.jpg"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "El Nombre del Viento",
+    "description": "Kvothe narra la historia de su vida desde su infancia hasta su juventud.",
+    "code": "F003",
+    "price": 35,
+    "status": true,
+    "stock": 20,
+    "category": "Fantasía",
+    "thumbnails": [
+      "https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Drácula",
+    "description": "El conde Drácula busca expandir su dominio desde Transilvania hasta Inglaterra.",
+    "code": "T001",
+    "price": 30,
+    "status": true,
+    "stock": 20,
+    "category": "Terror",
+    "thumbnails": [
+      "https://images-na.ssl-images-amazon.com/images/I/91OINe0DHTL.jpg"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "It (Eso)",
+    "description": "Un grupo de niños enfrenta a una entidad maligna que adopta la forma de un payaso.",
+    "code": "T002",
+    "price": 40,
+    "status": true,
+    "stock": 15,
+    "category": "Terror",
+    "thumbnails": [
+      "https://images-na.ssl-images-amazon.com/images/I/81RxO1jIJLL.jpg"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "El Resplandor",
+    "description": "Jack Torrance se convierte en el cuidador del Overlook Hotel, donde se enfrenta a fuerzas sobrenaturales.",
+    "code": "T003",
+    "price": 35,
+    "status": true,
+    "stock": 25,
+    "category": "Terror",
+    "thumbnails": [
+      "https://images-na.ssl-images-amazon.com/images/I/81awAgi4uKL.jpg"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "Frankenstein",
+    "description": "El Dr. Frankenstein crea un ser a partir de partes de cadáveres, desatando consecuencias trágicas.",
+    "code": "T004",
+    "price": 25,
+    "status": true,
+    "stock": 30,
+    "category": "Terror",
+    "thumbnails": [
+      "https://images-na.ssl-images-amazon.com/images/I/81t2CVWEsUL.jpg"
+    ]
+  }
+]

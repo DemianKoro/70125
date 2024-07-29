@@ -1,6 +1,8 @@
 const express = require('express');
 const fs = require('fs');
-const logger = require('../logger'); // Asegúrate de que esta ruta sea correcta
+const multer = require('multer');
+const path = require('path');
+const logger = require('../logger');
 
 const router = express.Router();
 
@@ -8,119 +10,112 @@ let products = [];
 
 const loadProducts = () => {
   if (fs.existsSync('data/products.json')) {
-    const data = fs.readFileSync('data/products.json');
-    products = JSON.parse(data);
+    try {
+      const data = fs.readFileSync('data/products.json', 'utf-8');
+      products = JSON.parse(data);
+    } catch (error) {
+      logger.error('Error al cargar productos: ' + error.message);
+      products = [];
+    }
   }
 };
 
 const saveProducts = () => {
-  fs.writeFileSync('data/products.json', JSON.stringify(products));
+  fs.writeFileSync('data/products.json', JSON.stringify(products, null, 2));
 };
 
 loadProducts();
 
-const generateId = () => {
-  const maxId = products.length > 0 ? Math.max(...products.map(p => parseInt(p.id))) : 0;
-  return String(maxId + 1);
-};
-
-// GET all products
-router.get('/', (req, res) => {
-  logger.info('GET /api/products - Todos los productos solicitados');
-  res.json(products);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    const uploadPath = path.join(__dirname, '..', 'uploads');
+    fs.mkdirSync(uploadPath, { recursive: true }); // Crea el directorio si no existe
+    cb(null, uploadPath);
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
 });
 
-// GET product by ID
-router.get('/:pid', (req, res) => {
-  const product = products.find(p => p.id === req.params.pid);
-  if (product) {
-    logger.info(`GET /api/products/${req.params.pid} - Producto solicitado`);
-    res.json(product);
-  } else {
-    logger.error(`GET /api/products/${req.params.pid} - Producto no encontrado`);
-    res.status(404).json({ error: 'Producto no encontrado' });
-  }
-});
+const upload = multer({ storage });
 
 // POST new product
-router.post('/', (req, res) => {
-  const { title, description, code, price, stock, category, thumbnails } = req.body;
+router.post('/', upload.single('thumbnail'), (req, res) => {
+  const { title, description, code, price, stock, category } = req.body;
+  const thumbnail = req.file ? `/uploads/${req.file.filename}` : null;
+
   if (!title || !description || !code || !price || !stock || !category) {
-    logger.error('POST /api/products - Campos obligatorios faltantes');
-    return res.status(400).json({ error: 'Todos los campos excepto thumbnails son obligatorios' });
+    return res.status(400).json({ error: 'Todos los campos son obligatorios' });
   }
 
-  const existingProduct = products.find(p => p.code === code);
+  const existingProduct = products.find((product) => product.code === code);
   if (existingProduct) {
-    logger.error('POST /api/products - El código del producto debe ser único');
     return res.status(400).json({ error: 'El código del producto debe ser único' });
   }
 
   const newProduct = {
-    id: generateId(),
+    id: String(Date.now()),
     title,
     description,
     code,
-    price,
-    status: true,
-    stock,
+    price: parseFloat(price),
+    stock: parseInt(stock),
     category,
-    thumbnails: thumbnails || []
+    thumbnails: thumbnail ? [thumbnail] : [],
   };
 
   products.push(newProduct);
   saveProducts();
-  logger.info(`POST /api/products - Nuevo producto añadido con ID ${newProduct.id}`);
+  logger.info(`POST /api/products - Producto añadido con código ${newProduct.code}`);
   res.status(201).json(newProduct);
 });
 
 // PUT update product by ID
-router.put('/:pid', (req, res) => {
-  const productIndex = products.findIndex(p => p.id === req.params.pid);
-  if (productIndex === -1) {
-    logger.error(`PUT /api/products/${req.params.pid} - Producto no encontrado`);
+router.put('/:id', upload.single('thumbnail'), (req, res) => {
+  const { id } = req.params;
+  const { title, description, code, price, stock, category } = req.body;
+  const thumbnail = req.file ? `/uploads/${req.file.filename}` : null;
+
+  console.log('Actualizar producto:', { id, title, description, code, price, stock, category, thumbnail });
+
+  const product = products.find((p) => p.id === id);
+  if (!product) {
     return res.status(404).json({ error: 'Producto no encontrado' });
   }
 
-  const { title, description, code, price, stock, category, thumbnails } = req.body;
-  const product = products[productIndex];
-
-  if (code && code !== product.code) {
-    const existingProduct = products.find(p => p.code === code);
-    if (existingProduct) {
-      logger.error('PUT /api/products - El código del producto debe ser único');
-      return res.status(400).json({ error: 'El código del producto debe ser único' });
+  try {
+    product.title = title;
+    product.description = description;
+    product.code = code;
+    product.price = parseFloat(price);
+    product.stock = parseInt(stock);
+    product.category = category;
+    if (thumbnail) {
+      product.thumbnails = [thumbnail];
     }
+
+    saveProducts();
+    logger.info(`PUT /api/products/${id} - Producto actualizado con ID ${id}`);
+    res.status(200).json(product);
+  } catch (error) {
+    logger.error('Error al actualizar el producto: ' + error.message);
+    res.status(500).json({ error: 'Error interno del servidor' });
   }
-
-  products[productIndex] = {
-    ...product,
-    title: title || product.title,
-    description: description || product.description,
-    code: code || product.code,
-    price: price || product.price,
-    stock: stock || product.stock,
-    category: category || product.category,
-    thumbnails: thumbnails || product.thumbnails
-  };
-
-  saveProducts();
-  logger.info(`PUT /api/products/${req.params.pid} - Producto actualizado`);
-  res.json(products[productIndex]);
 });
 
-// DELETE product by ID
-router.delete('/:pid', (req, res) => {
-  const productIndex = products.findIndex(p => p.id === req.params.pid);
-  if (productIndex === -1) {
-    logger.error(`DELETE /api/products/${req.params.pid} - Producto no encontrado`);
-    return res.status(404).json({ error: 'Producto no encontrado' });
-  }
+// GET all products
+router.get('/', (req, res) => {
+  res.json(products);
+});
 
-  products.splice(productIndex, 1);
-  saveProducts();
-  logger.info(`DELETE /api/products/${req.params.pid} - Producto eliminado`);
-  res.status(204).send();
+// GET product by ID
+router.get('/:id', (req, res) => {
+  const product = products.find((p) => p.id === req.params.id);
+  if (product) {
+    res.json(product);
+  } else {
+    res.status(404).json({ error: 'Producto no encontrado' });
+  }
 });
 
 module.exports = router;

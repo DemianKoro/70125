@@ -1,1 +1,39 @@
-[]
+[
+  {
+    "id": "1722180643475",
+    "products": [
+      {
+        "product": "2"
+      }
+    ]
+  },
+  {
+    "id": "1722181270281",
+    "products": [
+      {
+        "product": "2",
+        "quantity": 2
+      },
+      {
+        "product": "1",
+        "quantity": 1
+      },
+      {
+        "product": "3",
+        "quantity": 1
+      },
+      {
+        "product": "5",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "productId": "1",
+    "quantity": 2
+  },
+  {
+    "productId": "3",
+    "quantity": 1
+  }
+]

@@ -1,6 +1,5 @@
 const express = require('express');
 const fs = require('fs');
-
 const app = express();
 const PORT = 8080;
 
@@ -8,9 +7,19 @@ const PORT = 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const users = [];
+const FILE_PATH = 'users.json';
+let users = [];
 
-// Función para escribir en archivo
+// Función para leer datos desde el archivo
+const readFromFile = (filename) => {
+    if (fs.existsSync(filename)) {
+        const data = fs.readFileSync(filename, 'utf8');
+        return JSON.parse(data);
+    }
+    return [];
+};
+
+// Función para escribir datos en el archivo
 const writeToFile = (filename, data) => {
     fs.writeFileSync(filename, JSON.stringify(data, null, 2), 'utf8');
 };
@@ -18,8 +27,11 @@ const writeToFile = (filename, data) => {
 // Función para registrar en consola y archivo
 const logAndPersist = (message, data) => {
     console.log(message, data);
-    writeToFile('users.json', users);
+    writeToFile(FILE_PATH, users);
 };
+
+// Leer datos del archivo al iniciar el servidor
+users = readFromFile(FILE_PATH);
 
 // Endpoint para obtener usuarios
 app.get('/api/users', (req, res) => {
@@ -68,8 +80,7 @@ app.delete('/api/users/:uid', (req, res) => {
         logAndPersist('DELETE /api/users/:uid: Error:', errorResponse);
         return res.status(404).send(errorResponse);
     }
-    users.length = 0; // Clear the array
-    users.push(...newUsers); // Push new users back into array
+    users = newUsers;
     const response = { data: users };
     logAndPersist('DELETE /api/users/:uid: Success:', response);
     res.send(response);

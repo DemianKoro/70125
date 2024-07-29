@@ -3,5 +3,15 @@
     "id": 1,
     "email": "brandon.stark@gmail",
     "password": "654321"
+  },
+  {
+    "id": 2,
+    "email": "neddar.stark@gmail",
+    "password": "123456"
+  },
+  {
+    "id": 3,
+    "email": "jon.snow@gmail",
+    "password": "567891"
   }
 ]

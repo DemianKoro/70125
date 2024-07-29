@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './BookList.css';
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -14,54 +15,33 @@ const BookList = () => {
         console.error('Error al obtener los libros', error);
       }
     };
+
     fetchBooks();
   }, []);
 
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8080/api/products/${id}`);
-      setBooks(books.filter(book => book.id !== id));
-    } catch (error) {
-      console.error('Error al eliminar el libro', error);
-    }
-  };
-
   return (
-    <div className="book-list">
+    <div className="background-wood">
       <h2>Lista de Libros</h2>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Descripción</th>
-            <th>Código</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Categoría</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(book => (
-            <tr key={book.id}>
-              <td>{book.id}</td>
-              <td>{book.title}</td>
-              <td>{book.description}</td>
-              <td>{book.code}</td>
-              <td>{book.price}</td>
-              <td>{book.stock}</td>
-              <td>{book.category}</td>
-              <td>
-                <Link to={`/edit/${book.id}`} className="btn btn-warning">Editar</Link>
-                <button onClick={() => handleDelete(book.id)} className="btn btn-danger">Eliminar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div className="books">
+        {books.map((book) => (
+          <div key={book.code} className="book-card">
+            <Link to={`/product/${book.id}`}>
+              {book.thumbnails.length > 0 && (
+                <img src={`http://localhost:8080${book.thumbnails[0]}`} alt={book.title} className="book-image" />
+              )}
+              <div className="book-details">
+                <h3>{book.title}</h3>
+                <p>{book.description}</p>
+                <p><strong>Precio:</strong> ${book.price}</p>
+                <p><strong>Categoría:</strong> {book.category}</p>
+                <p><strong>Stock:</strong> {book.stock}</p>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default BookList;
