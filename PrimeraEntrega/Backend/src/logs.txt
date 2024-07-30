@@ -145,3 +145,13 @@
 2024-07-29T01:22:53.367Z [info]: GET /api/carts/1722181270281 - Carrito solicitado
 2024-07-29T01:27:40.855Z [info]: Servidor escuchando en el puerto 8080
 2024-07-29T01:31:55.235Z [info]: Servidor escuchando en el puerto 8080
+2024-07-29T23:33:25.069Z [info]: Servidor escuchando en el puerto 8080
+2024-07-30T22:19:53.593Z [info]: Servidor escuchando en el puerto 8080
+2024-07-30T22:20:38.091Z [info]: PUT /api/products/6 - Producto actualizado con ID 6
+2024-07-30T22:23:45.373Z [info]: POST /api/products - Producto añadido con código H003
+2024-07-30T22:26:57.838Z [info]: Servidor escuchando en el puerto 8080
+2024-07-30T22:28:11.524Z [info]: PUT /api/products/1722378225379 - Producto actualizado con ID 1722378225379
+2024-07-30T22:34:05.451Z [info]: PUT /api/products/7 - Producto actualizado con ID 7
+2024-07-30T22:34:19.394Z [info]: PUT /api/products/8 - Producto actualizado con ID 8
+2024-07-30T22:34:31.116Z [info]: PUT /api/products/9 - Producto actualizado con ID 9
+2024-07-30T22:34:45.029Z [info]: PUT /api/products/10 - Producto actualizado con ID 10

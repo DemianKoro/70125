@@ -74,7 +74,7 @@
     "stock": 20,
     "category": "Fantasía",
     "thumbnails": [
-      "https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg"
+      "/uploads/1722378038085-NOTW.jfif"
     ]
   },
   {
@@ -87,7 +87,7 @@
     "stock": 20,
     "category": "Terror",
     "thumbnails": [
-      "https://images-na.ssl-images-amazon.com/images/I/91OINe0DHTL.jpg"
+      "/uploads/1722378845449-Dracula.jfif"
     ]
   },
   {
@@ -100,7 +100,7 @@
     "stock": 15,
     "category": "Terror",
     "thumbnails": [
-      "https://images-na.ssl-images-amazon.com/images/I/81RxO1jIJLL.jpg"
+      "/uploads/1722378859391-SK IT.jpg"
     ]
   },
   {
@@ -113,7 +113,7 @@
     "stock": 25,
     "category": "Terror",
     "thumbnails": [
-      "https://images-na.ssl-images-amazon.com/images/I/81awAgi4uKL.jpg"
+      "/uploads/1722378871113-resplandor.webp"
     ]
   },
   {
@@ -126,7 +126,31 @@
     "stock": 30,
     "category": "Terror",
     "thumbnails": [
-      "https://images-na.ssl-images-amazon.com/images/I/81t2CVWEsUL.jpg"
+      "/uploads/1722378885026-frankestein.webp"
+    ]
+  },
+  {
+    "id": "1722378225372",
+    "title": "Caperucita Roja",
+    "description": "Una niña buscona es abusada por un lobo",
+    "code": "H003",
+    "price": 38,
+    "stock": 1,
+    "category": "Fantasía",
+    "thumbnails": [
+      "/uploads/1722378225371-caperucita.jpg"
+    ]
+  },
+  {
+    "id": "1722378225379",
+    "title": "Alicia en el País de las Maravillas",
+    "description": "Una niña toma barbituricos y se pega alto viaje",
+    "code": "F004",
+    "price": 29,
+    "stock": 2,
+    "category": "Fantasía",
+    "thumbnails": [
+      "/uploads/1722378491517-alicia.jpg"
     ]
   }
 ]
